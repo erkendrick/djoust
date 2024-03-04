@@ -1,5 +1,5 @@
 Djoust is a web-based multiplayer game influenced by the arcade classic Joust. It is developed with vanilla JavaScript for the frontend and Node.js, Express, and Socket.IO libraries handling the backend functionalities. 
-The primary goal is to create a lightweight, anonymous multiplayer experience. The application is currently in alpha stages of development.
+The primary goal is to create a lightweight, anonymous multiplayer experience while learning about full stack application development. The application is currently in alpha stages of development.
 
 Latest developments:
 Established game environment with server authoritative state updates.
