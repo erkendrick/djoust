@@ -9,11 +9,15 @@ Single player session
 1v1 duel with other users through a simple matchmaking queue. 
 
 Duel Start:
+
 ![Duel Start](assets/djoustDuelStart.gif)
 
 Collision detection between players and their weapons:
+
 ![collision](assets/djoustCollisionTest.gif)
+
 weapon collision with platform:
+
 ![platform collision](assets/weaponPlatformCollision.gif)
 
 Future Development Roadmap:
