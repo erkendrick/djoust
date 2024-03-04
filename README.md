@@ -8,8 +8,8 @@ Established game environment with server authoritative state updates.
 Single player session
 1v1 duel with other users through a simple matchmaking queue. 
 
-local network duel testing:
-![Gameplay Example](assets/gameplay.gif)
+Duel Start:
+![Gameplay Example](assets/djoustDuelStart.mp4)
 
 player collision:
 ![player collision](assets/playerPlayerCollision.gif)
