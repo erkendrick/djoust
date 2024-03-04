@@ -18,7 +18,7 @@ Collision detection between players and their weapons:
 
 weapon collision with platform:
 
-![platform collision](assets/weaponPlatformCollision.gif)
+![platform collision](assets/djoustWeaponPlatformCollision.gif)
 
 Future Development Roadmap:
 
