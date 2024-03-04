@@ -5,8 +5,6 @@ Latest developments:
 Established game environment with server authoritative state updates.
   client side handles rendering gameplay and emitting movement commands to the server.
   server handles receiving movement and network commands from the client and emits modified player state at a fixed interval, currently 64 tick, via websocket connection.
-Single player session
-1v1 duel with other users through a simple matchmaking queue. 
 
 Duel Start:
 
