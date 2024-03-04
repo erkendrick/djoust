@@ -11,9 +11,8 @@ Single player session
 Duel Start:
 ![Duel Start](assets/djoustDuelStart.gif)
 
-player collision:
-![player collision](assets/playerPlayerCollision.gif)
-![weapon collision](assets/weaponWeaponCollision.gif)
+Collision detection between players and their weapons:
+![collision](assets/djoustCollisionTest.gif)
 weapon collision with platform:
 ![platform collision](assets/weaponPlatformCollision.gif)
 
