@@ -9,7 +9,7 @@ Single player session
 1v1 duel with other users through a simple matchmaking queue. 
 
 Duel Start:
-![Gameplay Example](assets/djoustDuelStart.mp4)
+![Duel Start](assets/djoustDuelStart.gif)
 
 player collision:
 ![player collision](assets/playerPlayerCollision.gif)
