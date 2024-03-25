@@ -1,18 +1,20 @@
-
 body, html {
-    background-color: grey;
+    background-color: black;
     margin: 0;
     padding: 0;
     height: 100%;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header {
-    width: 100%; 
+    width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center; 
-    padding: 20px 0; 
+    align-items: center;
+    padding: 20px 0;
 }
 
 button#duel {
@@ -20,9 +22,22 @@ button#duel {
 }
 
 canvas {
-    display: block;
+    border: 1px solid white;
     background: #000;
-    margin: 20px auto; 
     width: 1280px; 
     height: 720px; 
+}
+
+#lives-display {
+    font-size: 32px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+#player-lives-count {
+    color: blue;
+}
+
+#opponent-lives-count {
+    color: red;
 }
