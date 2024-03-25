@@ -1,10 +1,12 @@
 Djoust is a web-based multiplayer game influenced by the arcade classic Joust. It is developed with vanilla JavaScript for the frontend and Node.js, Express, and Socket.IO libraries handling the backend functionalities. 
-The primary goal is to create a lightweight, anonymous multiplayer experience while learning about full stack application development. This application is currently alpha stage of development.
+The primary objective is to create an intuitive and anonymous multiplayer experience while learning about full stack application development. This application is currently in alpha stage of development.
 
 Latest developments:
-Established game environment with server authoritative state updates.
-  Client side handles rendering gameplay and emitting movement commands to the server.
-  Server handles receiving movement and network commands from the client and emits modified player state at a fixed interval, currently 64 tick, via websocket connection.
+Improved boundary checks for player platform collision to prevent getting stuck or falling out of bounds when off screen. 
+Made lunge movement more predictable and added a 3 second cooldown. 
+Added UI for tracking bot kills and player deaths in single player and player lives remaining in a duel. 
+
+Added the beginnings of client side rendered bots for practice when not in a duel. Bot logic is the current project focus with the goal of making bot movement unpredictable and challenging to engage with.  
 
 Duel Start:
 
@@ -19,18 +21,12 @@ weapon collision with platform:
 ![platform collision](assets/djoustWeaponPlatformCollision.gif)
 
 Future Development Roadmap:
-
-minimize influence of network latency on game frame rendering. 
-  last test with ngrok tunnel went as expected.
-  Network latency is noticeably sluggish and making the game run smoothly on network is the biggest hurdle before deployment. 
-
-Improve UX between single player and duel states.
-
-expand single player experience. 
-  Add bots and visually track player bot kills and player deaths. 
+Expand the single player experience to be more engaging with djoust combat against bots
 
 Acquire a domain and figure out the best platform for cloud hosting. 
 
 Explore user authorization and build a database for retaining user sessions and statistics. 
   Create a live leaderboard. 
   Allow users to create custom duel rooms for private matches. 
+
+Expand the single player experience to be more engaging with djoust combat against bots
