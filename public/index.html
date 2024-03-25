@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joust</title>
+    <title>Djoust</title>
     <link rel="stylesheet" href="styles.css">
     <script src="/socket.io/socket.io.js"></script>
     
@@ -12,6 +12,11 @@
     <header>
         <button id="duel">DUEL</button>
     </header>
+
+    <div id="lives-display">
+        <span id="player-lives-count">0</span> | <span id="opponent-lives-count">0</span>
+    </div>
+    
     <canvas id="gameCanvas" width="1280" height="720"></canvas>
     <script type="module" src="djoust.js"></script>
 </body>
