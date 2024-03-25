@@ -65,18 +65,27 @@ io.on('connection', (socket) => {
                 game.resetAndSpawnPlayers(player1Socket, player2Socket, duelRoom, io);
             }
         }
-    })
+    });
+
+    socket.on('playerHitByBotWeapon', (data) => {
+        const player = game.players[data.playerId];
+        if (player) {
+            player.position = { ...player.spawnPosition };
+            player.velocity = { x: 0, y: 0 };
+            player.acceleration = { x: 0, y: 0 };
+        }
+    });;
 
     socket.on('playerLunge', () => {
         const player = game.players[socket.id];
         if (!player) return;
         const now = Date.now();
-
+        
         if (now - player.lungeLastTime >= player.lungeCooldown) {
-            const LUNGE_FORCE = 5;
-            player.acceleration.x += player.orientation === 'left' ? -LUNGE_FORCE : LUNGE_FORCE;
+            const LUNGE_FORCE = 30;
+            player.velocity.x += player.orientation === 'left' ? -LUNGE_FORCE : LUNGE_FORCE;
 
-            player.lungeStartTime = now;
+            
             player.lungeLastTime = now;
         }
     });
@@ -118,4 +127,3 @@ io.on('connection', (socket) => {
         delete game.players[socket.id];
     });
 });
-
