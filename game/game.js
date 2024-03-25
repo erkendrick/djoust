@@ -1,4 +1,4 @@
-import * as collisionUtils from '../utils/collisionUtils.js';
+import * as collisionUtils from '../public/utils/collisionUtils.js';
 import * as constants from '../config/constants.js';
 import { io } from '../server.js';
 
@@ -21,7 +21,6 @@ function checkAndResetOnCollision(attacker, defender) {
     };
 
     if (collisionUtils.isColliding(weaponHitbox, defenderHitbox)) {
-        console.log(`Player ${defender.id} hit by Player ${attacker.id}'s weapon.`);
         defender.position = {...defender.spawnPosition}; 
         defender.velocity.x = 0; 
         defender.velocity.y = 0; 
@@ -34,7 +33,6 @@ function handlePlayerDeath(playerId) {
     if (!player || !playerDuelRoomMapping[playerId]) return;
 
     player.deaths += 1;
-    console.log(`Player ${playerId} is at ${player.deaths} deaths`);
     if (player.deaths >= 3) {
         const duelRoom = playerDuelRoomMapping[playerId];
         endDuel(duelRoom);
