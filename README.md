@@ -11,7 +11,7 @@ An interesting twist occurred in the initial days of getting comfortable with Un
 - More environments and additions to existing levels.
     - I want to explore making the game bigger than a single screen arena.
 - Explore multiplayer options with user rooms and invite based 1v1 matches.
-
+- Sound effects for collisions and movements, background music.
 
 
 
