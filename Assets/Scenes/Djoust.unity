@@ -869,8 +869,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveForce: 2
   jumpForce: 5
-  dashForce: 5
-  maxSpeed: 8
+  dashForce: 10
+  maxSpeed: 7
+  spinSpeed: 0.25
+  maxSpinSpeed: 600
 --- !u!114 &901721005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -940,6 +942,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4704381334859361653, guid: 9345ebcf341b594488a73df4ab04807c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.029336974
+      objectReference: {fileID: 0}
+    - target: {fileID: 4704381334859361653, guid: 9345ebcf341b594488a73df4ab04807c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.485288
+      objectReference: {fileID: 0}
+    - target: {fileID: 6576292305257190896, guid: 9345ebcf341b594488a73df4ab04807c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.028729487
+      objectReference: {fileID: 0}
+    - target: {fileID: 6576292305257190896, guid: 9345ebcf341b594488a73df4ab04807c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.485639
+      objectReference: {fileID: 0}
     - target: {fileID: 7949534126570003728, guid: 9345ebcf341b594488a73df4ab04807c, type: 3}
       propertyPath: m_Name
       value: Platforms

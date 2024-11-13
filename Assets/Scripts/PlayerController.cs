@@ -3,10 +3,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public float moveForce = 5f;
+    public float moveForce = 2f;
     public float jumpForce = 5f;
     public float dashForce = 5f;
-    public float maxSpeed = 10f;
+    public float maxSpeed = 7f;
+    public float spinSpeed = 1f;
+    public float maxSpinSpeed = 500f;
 
     private void Start()
     {
@@ -17,6 +19,7 @@ public class PlayerController : MonoBehaviour
     {
         PlayerMovement();
         ClampVelocity();
+        ClampRotationalVelocity();
     }
 
     private void PlayerMovement()
@@ -38,6 +41,18 @@ public class PlayerController : MonoBehaviour
             Vector2 dashDirection = transform.right;
             rb.AddForce(dashDirection * dashForce, ForceMode2D.Impulse);
         }
+
+        // Spin Controls
+        if (Input.GetKey(KeyCode.Q))
+        {
+            rb.AddTorque(spinSpeed);
+        }
+
+        if (Input.GetKey(KeyCode.E))
+        {
+            rb.AddTorque(-spinSpeed);
+
+        }
     }
 
     private void ClampVelocity()
@@ -45,6 +60,14 @@ public class PlayerController : MonoBehaviour
         if (rb.velocity.magnitude > maxSpeed)
         {
             rb.velocity = rb.velocity.normalized * maxSpeed;
+        }
+    }
+
+    private void ClampRotationalVelocity()
+    {
+        if (Mathf.Abs(rb.angularVelocity) > maxSpinSpeed)
+        {
+            rb.angularVelocity = Mathf.Sign(rb.angularVelocity) * maxSpinSpeed;
         }
     }
 }
