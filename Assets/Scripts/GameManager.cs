@@ -77,11 +77,19 @@ public class GameManager : MonoBehaviour
         killCounterText.text = botsDestroyed.ToString();
         player.position = playerStartPosition;
 
-        foreach (GameObject bot in GameObject.FindGameObjectsWithTag("Bot"))
+        foreach (GameObject bot in GameObject.FindGameObjectsWithTag("CircleBot"))
         {
             Destroy(bot);
         }
 
+        foreach (GameObject bot in GameObject.FindGameObjectsWithTag("ChaseBot"))
+        {
+            Destroy(bot);
+        }
+
+        BotSpawner spawner = FindObjectOfType<BotSpawner>();
+        spawner.ResetSpawner();
+        
         isGameOver = false;
         Time.timeScale = 1f;
     }
@@ -90,5 +98,10 @@ public class GameManager : MonoBehaviour
     {
         botsDestroyed++;
         killCounterText.text = botsDestroyed.ToString();
+    }
+
+    public int BotsDestroyed
+    {
+        get { return botsDestroyed; }
     }
 }

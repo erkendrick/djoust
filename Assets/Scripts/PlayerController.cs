@@ -10,12 +10,59 @@ public class PlayerController : MonoBehaviour
     public float spinSpeed = 1f;
     public float maxSpinSpeed = 500f;
 
+    // Input variables
+    private float horizontalInput = 0f;
+    private bool jumpInput = false;
+    private bool dashInput = false;
+    private float spinInput = 0f;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
+    {
+        // Handle input
+        if (Input.GetKey(KeyCode.A))
+        {
+            horizontalInput = -1f;
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            horizontalInput = 1f;
+        }
+        else
+        {
+            horizontalInput = 0f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            jumpInput = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            dashInput = true;
+        }
+
+        // Spin Controls
+        if (Input.GetKey(KeyCode.Q))
+        {
+            spinInput = 1f;
+        }
+        else if (Input.GetKey(KeyCode.E))
+        {
+            spinInput = -1f;
+        }
+        else
+        {
+            spinInput = 0f;
+        }
+    }
+
+    private void FixedUpdate()
     {
         PlayerMovement();
         ClampVelocity();
@@ -24,35 +71,26 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerMovement()
     {
-        if (Input.GetKey(KeyCode.A))
-        {
-            rb.AddForce(Vector2.left * moveForce);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            rb.AddForce(Vector2.right * moveForce);
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
+        // Horizontal Movement
+        rb.AddForce(Vector2.right * horizontalInput * moveForce);
+
+        // Jump
+        if (jumpInput)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            jumpInput = false;
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+
+        // Dash
+        if (dashInput)
         {
             Vector2 dashDirection = transform.right;
             rb.AddForce(dashDirection * dashForce, ForceMode2D.Impulse);
+            dashInput = false;
         }
 
         // Spin Controls
-        if (Input.GetKey(KeyCode.Q))
-        {
-            rb.AddTorque(spinSpeed);
-        }
-
-        if (Input.GetKey(KeyCode.E))
-        {
-            rb.AddTorque(-spinSpeed);
-
-        }
+        rb.AddTorque(spinInput * spinSpeed);
     }
 
     private void ClampVelocity()

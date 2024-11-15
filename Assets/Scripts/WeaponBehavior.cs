@@ -39,7 +39,7 @@ public class WeaponBehavior : MonoBehaviour
             FreezePlayer();
         }
 
-        if (collision.CompareTag("Bot"))
+        if (collision.CompareTag("ChaseBot") || collision.CompareTag("CircleBot"))
         {
             Destroy(collision.gameObject);
             FindObjectOfType<GameManager>().IncrementKillCounter();
